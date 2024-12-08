@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <!-- set title of page -->
+		<title>Contact</title>
+
+        <!-- load bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+       
+        <!-- load bootstrap javascript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+        <!-- load page javascript -->
+        <script src="contact.js"></script>
+
+        <!-- load our CSS -->
+        <link href="primary.css" rel="stylesheet">
+
+        <!-- meta tags for viewport and character encoding -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+    </head>
+    
+    <body>
+        <nav> <!-- header & navigation bar @Daniel Shlusaver-->
+            <div id="nav-logo-container"> <!-- custom div needed for full width bg colour change -->
+                <div class="container p-3"> <!-- bootstrap container, limit content width -->
+                    <div class="container d-flex align-items-center justify-content-center">
+                        <img id="emblem" src="images/logo/emblem.png" alt="Sustainable Development Goal 1 Emblem Logo"> <!-- logo emblem -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="nav-pills-container">
+                <div class="container" id="nav-pills">
+                    <header class="d-flex justify-content-center py-3">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item"><a href="index.html" class="nav-link button-text">Home</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link button-text">About</a></li>
+                            <li class="nav-item"><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link button-text">FAQ</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link button-text">Targets</a></li>
+                            <li class="nav-item"><a href="takeaction.html" class="nav-link button-text">Take Action</a></li>
+                        </ul>
+                    </header>
+                </div>
+            </div>
+            <div class="divider-bar"></div>
+        </nav>
+        
+        <main> <!-- all main content by @Daniel Shlusaver -->      
+            <div class="container"> <!-- need container otherwise the rows touch the edges -->
+                <div class="row mb-4"> <!-- 1st row for the contact page -->
+                    <div class="col-md-6"> <!-- 1st column contains an image, which will be changed in js -->
+                        <img id = "contact-photo" class="container-image img-fluid w-100 rounded-corners" src="images/contact/phone.png" alt="image">
+                    </div>
+                    
+                    <div class="col-md-6"> <!-- 2nd column contains some text -->
+                        <h2>Reaching Out</h2>
+                        <p>To reach out, please fill out the required information using the contact form below. We will be happy to answer any queries relating to our mission in raising awareness of the United Nations effort to end poverty in all its forms everywhere. Your inquiries could range from how we measure impact, to our collaboration with local and international NGOs, or even ways you can get involved.</p>
+                        <p>Please use the form to ask about volunteer opportunities, partnership possibilities, or to learn more about specific projects we're currently undertaking. Together, we can make a significant difference, so do not hesitate to reach out with your questions or ideas.</p>
+                    </div>
+                </div>
+                
+                <div class="row"> <!-- 2nd row for the contact page -->
+                    <div class="col-md-6"> <!-- 1st column, some info -->
+                        <h2>Contacting Us</h2>
+                        <p>When sending an inquiry or feedback, please include your full name, email address, and a clear description of your request or the information you need. This helps us respond more efficiently and effectively.</p>
+                        <h2>Can I give feedback?</h2>
+                        <p>Absolutely! We value your input and are always looking to improve our content and user experience. Please use the contact form to submit any suggestions or comments you have about the website or our articles.</p>
+                        <h2>Response Times</h2>
+                        <p>We strive to respond to all inquiries within 48 hours. If your matter is urgent, please indicate this in your message, and we will do our best to prioritize your request.</p>
+                    </div>
+
+                    <div class="col-md-6"> <!-- 2nd column, contact form -->
+                        <div class="contact-form-container p-4 rounded shadow white-bg"> <!-- base of the form -->
+                            <h2 class="text-center mb-4">Contact Form</h2> <!-- form title -->
+
+                            <form id="contact-form"> <!-- all form elements and fields go in here -->
+                                <div class="mb-3"> <!-- 1st field, full name -->
+                                    <label for="full-name" class="form-label">Full Name: <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="full-name" placeholder="Enter Full Name" required>
+                                    <!-- we use the span tag to add a red "required" asterisk indicator -->
+                                </div>
+                                
+                                <div class="mb-3"> <!-- 2nd field, email address -->
+                                    <label for="email" class="form-label">Email: <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="email" placeholder="email@address.ie" required>
+                                </div>
+                                
+                                <div class="mb-3"> <!-- 3rd field, query -->
+                                    <label for="query-type" class="form-label">Query: <span class="text-danger">*</span></label>
+
+                                    <select class="form-select" id="query" required> <!-- dropdown menu with options -->
+                                        <option value="" selected>Choose...</option>
+                                        <option value="Partnership">Partnership</option>
+                                        <option value="Feedback">Feedback</option>
+                                        <option value="Volunteer">Volunteer</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3"> <!-- 4th field, message -->
+                                    <label for="message" class="form-label">Message: <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="message" rows="4" placeholder="Enter your message here..." required></textarea>
+                                </div>
+                                
+                                <div class="d-grid"> <!-- submit button -->
+                                    <button type="submit" class="btn btn-danger" onclick="formSubmitted()">Submit Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="text-center text-white">
+			<div class="container"> <!-- Grid container -->
+				<section class="mt-5"> <!-- Section for links -->
+					<div class="row text-center d-flex justify-content-center pt-5"> <!-- Grid row-->
+						<div class="col-md-2"> <!-- Grid column -->
+							<h6 class="text-uppercase font-weight-bold">
+								<a href="about.html" class="text-white">About Us</a>
+							</h6>
+						</div>
+
+						<div class="col-md-2"> <!-- Grid column -->
+							<h6 class="text-uppercase font-weight-bold">
+								<a href="contact.html" class="text-white">Contact Us</a>
+							</h6>
+						</div> <!-- END OF Grid column -->
+
+						<div class="col-md-2"> <!-- Grid column -->
+							<h6 class="text-uppercase font-weight-bold">
+								<a href="#!" class="text-white">Privacy Policy</a>
+							</h6>
+						</div> <!-- END OF Grid column -->
+			
+						<div class="col-md-2"> <!-- Grid column -->
+							<h6 class="text-uppercase font-weight-bold">
+								<a href="faq.html" class="text-white">FAQ</a>
+							</h6>
+						</div> <!-- END OF Grid column -->
+					</div> <!-- END OF Grid row-->
+				</section> <!-- END OF Section: Links -->
+
+				<hr class="mt-5"> <!--horizontal line-->
+
+				<section class="mb-5"> <!-- Section: Text OPTIONAL!!!! -->
+					<div class="row d-flex justify-content-center">
+						<div class="col-lg-8">
+							<p>One step forward. Together, we can make a difference. Join the global effort to end poverty In all its form by 2030. Lets work to create a world where everyone is equal.
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="mb-4"> <!-- Section: Social -->
+					<!-- Facebook -->
+					<a data-mdb-ripple-init class="btn text-white btn-floating m-2 btn-facebook" href="#!" role="button">
+						<i class="fa fa-facebook-f"></i>
+					</a>
+					
+					<!-- Twitter -->
+					<a data-mdb-ripple-init class="btn text-white btn-floating m-2 btn-twitter" href="#!" role="button">
+						<i class="fa fa-twitter"></i>
+					</a>
+
+					<!-- Youtube -->
+					<a data-mdb-ripple-init class="btn text-white btn-floating m-2 btn-youtube" href="#!" role="button">
+						<i class="fa fa-youtube"></i>
+					</a>
+
+					<!-- Instagram -->
+					<a data-mdb-ripple-init class="btn text-white btn-floating m-2 btn-instagram" href="#!" role="button">
+						<i class="fa fa-instagram"></i>
+					</a>
+				</section>
+			</div> <!-- Grid container -->
+			
+			<!-- Copyright -->
+			<div class="text-center p-3">© 2024 Copyright: No Poverty - SDG 1</div>
+		</footer> <!-- DENISE (END OF FOOTER) --> 
+    </body>
+</html>
