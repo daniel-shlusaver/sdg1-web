@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <!-- set title of page -->
+		<title>Take Action</title>
+
+        <!-- load bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+       
+        <!-- load bootstrap javascript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+        <!-- load page javascript -->
+        <script src="takeaction.js"></script>
+
+        <!-- load our CSS -->
+        <link href="primary.css" rel="stylesheet">
+
+        <!-- meta tags for viewport and character encoding -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+    </head>
+
+    <!-- https://featured.undp.org/covid-19-and-the-sdgs/ -->
+     
+    <body>
+        <nav> <!-- header & navigation bar @Daniel Shlusaver-->
+            <div id="nav-logo-container"> <!-- custom div needed for full width bg colour change -->
+                <div class="container p-3"> <!-- bootstrap container to limit content width -->
+                    <div class="container d-flex align-items-center justify-content-center">
+                        <img id="emblem" src="images/logo/emblem.png" alt="Sustainable Development Goal 1 Emblem Logo"> <!-- logo emblem -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="nav-pills-container">
+                <div class="container" id="nav-pills">
+                    <header class="d-flex justify-content-center py-3">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item"><a href="index.html" class="nav-link button-text">Home</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link button-text">About</a></li>
+                            <li class="nav-item"><a href="contact.html" class="nav-link button-text" aria-current="page">Contact</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link button-text">FAQ</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link button-text">Targets</a></li>
+                            <li class="nav-item"><a href="takeaction.html" class="nav-link active">Take Action</a></li>
+                        </ul>
+                    </header>
+                </div>
+            </div>
+            <div class="divider-bar"></div>
+        </nav>
+        
+        <main> <!-- all main content by @Daniel Shlusaver -->                
+            <div class="container"> <!-- need container otherwise the rows touch the edges -->
+                <div class="row mb-4"> <!-- 1st row for the take action banner -->
+                    <div class="banner-container">
+                        <img class="img-fluid rounded-corners" src="images/banners/TakeActionBanner.png" alt="Take Action Banner Image">
+                        <h1>Take Action</h1>
+                    </div>
+                </div>
+
+                <div class="row mb-4"> <!-- 2nd row for the general overview and importance of UNDP -->
+                    <div class="col-md-6"> <!-- first column (overview) -->
+                        <h2>Overview</h2>
+                        <p>We believe that if we all collectively come together and take action, we can positively contribute towards Sustainable Development Goals such as eliminating poverty and inequality across the world.</p>
+                    </div>
+                    <div class="col-md-6"> <!-- second column (UNDP) -->
+                        <h2>Importance of UNDP</h2>
+                        <p>The United Nations Development Programme (UNDP), helps countries develop policies, leadership skills, partnerships and institutional capabilities to achieve the Sustainable Development Goals.</p>
+                    </div>
+                </div>
+
+                <div class="row mb-4"> <!-- 3rd row for gallery info and random facts -->
+                    <div class="col-md-6"> <!-- first column (gallery) -->
+                        <h2>Take Action Gallery</h2>
+                        <p>View our Take Action gallery consisting of photographs of a few of the UNDP works in 170 countries and territories. One of the goals of the orginisation is to eradicate poverty and reduce inequality.</p>
+                    </div>
+                    <div class="col-md-6"> <!-- second column (random facts) -->
+                        <h2>Random Facts</h2>
+                        <p id="random-fact">Did you know...</p>
+                    </div>
+                </div>
+
+                <div class="row mb-4"> <!-- 4th row for buttons -->
+                    <div class="col-md-6 py-3"> <!-- first column for gallery button -->
+                        <button id="gallery-button" class="btn btn-danger">
+                            <i class="toggle-icon">🔲</i> 
+                            <span class="toggle-text">Switch to Grid View</span>
+                        </button>
+                    </div>
+                    <div class="col-md-6 py-3"> <!-- second column for fact button -->
+                        <button id="fact-button" class="btn btn-danger">
+                            <i class="toggle-icon">💡</i> 
+                            <span class="toggle-text">Display a Random Fact</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row"> <!-- 5th row for gallery -->
+                    <div id="gallery-container"> <!-- one big container to house everything -->
+
+                        <div id="grid-view" class="gallery-grid"> <!-- gallery grid view (needs to be toggled) -->
+                            <div class="row g-3">
+                                <!-- 1st column, photo 1 -->
+                                <div class="col-6 col-md-3">
+                                    <div class="w-100 overflow-hidden grid-image">
+                                        <img class="img-fluid h-100 w-100 rounded-corners" src="images/action/UNDP-Bangladesh-2020.jpg" alt="Photo 1">
+                                    </div>
+                                </div>
+
+                                <!-- 2nd column, photo 2 -->
+                                <div class="col-6 col-md-3">
+                                    <div class="w-100 overflow-hidden grid-image">
+                                        <img class="img-fluid h-100 w-100 rounded-corners" src="images/action/UNDP-CAR-2020.jpg" alt="Photo 2">
+                                    </div>
+                                </div>
+
+                                <!-- 3rd column, photo 3 -->
+                                <div class="col-6 col-md-3">
+                                    <div class="w-100 overflow-hidden grid-image">
+                                        <img class="img-fluid h-100 w-100 rounded-corners" src="images/action/UNDP-IQ-Karbala.jpg" alt="Photo 3">
+                                    </div>
+                                </div>
+
+                                <!-- 4th column, photo 4 -->
+                                <div class="col-6 col-md-3">
+                                    <div class="w-100 overflow-hidden grid-image">
+                                        <img class="img-fluid h-100 w-100 rounded-corners" src="images/action/defensegov.jpg" alt="Photo 4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- carousel slideshow view (default) -->
+                        <div id="carousel-view" class="active-view">
+                            <div id="gallery-carousel" class="carousel slide mb-6" data-bs-ride="carousel">
+                                <div class="carousel-indicators"> <!-- create buttons for 4 slides/photos -->
+                                    <button type="button" aria-label="Photo 1" data-bs-target="#gallery-carousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                                    <button type="button" aria-label="Photo 2" data-bs-target="#gallery-carousel" data-bs-slide-to="1"></button>
+                                    <button type="button" aria-label="Photo 3" data-bs-target="#gallery-carousel" data-bs-slide-to="2"></button>
+                                    <button type="button" aria-label="Photo 4" data-bs-target="#gallery-carousel" data-bs-slide-to="3"></button>
+                                </div>
+                                
+                                <div class="carousel-inner"> <!-- houses the carousel slides and photos -->
+                                    <div class="carousel-item active"> <!-- 1st slide, active (default) -->
+                                        <img class="img-fluid rounded-corners" src="images/action/UNDP-Bangladesh-2020.jpg"></img>
+
+                                        <div class="container"> <!-- container for caption -->
+                                            <div class="carousel-caption text-start"> <!-- text-start positions it to left hand side -->
+                                                <h1>UNDP Bangladesh</h1>
+                                                <p class="opacity-75">Community workers promote COVID-19 prevention awareness and distribute a hygiene package to a low-income family in Bangladesh</p> <!-- opacity-75 makes text have some transparency -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="carousel-item"> <!-- 2nd slide -->
+                                        <img class="img-fluid rounded-corners" src="images/action/UNDP-CAR-2020.jpg"></img>
+                                        <div class="container">
+                                            <div class="carousel-caption text-start">
+                                                <h1>UNDP C.A.R</h1>
+                                                <p class="opacity-75">Kinanata Sali Yaya, makes face masks in her sewing workshop in the Central African Republic.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item"> <!-- 3rd slide -->
+                                        <img class="img-fluid rounded-corners" src="images/action/UNDP-IQ-Karbala.jpg"></img>
+                                        <div class="container">
+                                            <div class="carousel-caption text-start">
+                                                <h1>UNDP Iraq</h1>
+                                                <p class="opacity-75">A member of the Karbala volunteer network delivers food to a vulnerable family.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item"> <!-- 4th slide -->
+                                        <img class="img-fluid rounded-corners" src="images/action/defensegov.jpg"></img>
+                                        <div class="container">
+                                            <div class="carousel-caption text-start">
+                                                <h1>Haiti Food Crisis</h1>
+                                                <p class="opacity-75">Haitian woman walks with her child toward the distribution line in Port-au-Prince, Haiti.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- two buttons, one left arrow one right arrow, to navigate between slides -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#gallery-carousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+        
+                                <button class="carousel-control-next" type="button" data-bs-target="#gallery-carousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- DENISE (FOOTER) -->
+        <footer class="text-center text-white">
+			<div class="container"> <!-- Grid container -->
+				<section class="mt-5"> <!-- Section for links -->
+					<div class="row text-center d-flex justify-content-center pt-5"> <!-- Grid row-->
+						<div class="col-md-2"> <!-- Grid column -->
+							<h6 class="text-uppercase font-weight-bold">
+								<a href="about.html" class="text-white">About Us</a>
+							</h6>
+						</div>
+
+						<div class="col-md-2"> <!-- Grid column -->
+							<h6 class="text-uppercase font-weight-bold">
+								<a href="contact.html" class="text-white">Contact Us</a>
+							</h6>
+						</div> <!-- END OF Grid column -->
+
+						<div class="col-md-2"> <!-- Grid column -->
+							<h6 class="text-uppercase font-weight-bold">
+								<a href="#!" class="text-white">Privacy Policy</a>
+							</h6>
+						</div> <!-- END OF Grid column -->
+			
+						<div class="col-md-2"> <!-- Grid column -->
+							<h6 class="text-uppercase font-weight-bold">
+								<a href="faq.html" class="text-white">FAQ</a>
+							</h6>
+						</div> <!-- END OF Grid column -->
+					</div> <!-- END OF Grid row-->
+				</section> <!-- END OF Section: Links -->
+
+				<hr class="mt-5"> <!--horizontal line-->
+
+				<section class="mb-5"> <!-- Section: Text OPTIONAL!!!! -->
+					<div class="row d-flex justify-content-center">
+						<div class="col-lg-8">
+							<p>One step forward. Together, we can make a difference. Join the global effort to end poverty In all its form by 2030. Lets work to create a world where everyone is equal.
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="mb-4"> <!-- Section: Social -->
+					<!-- Facebook -->
+					<a data-mdb-ripple-init class="btn text-white btn-floating m-2 btn-facebook" href="#!" role="button">
+						<i class="fa fa-facebook-f"></i>
+					</a>
+					
+					<!-- Twitter -->
+					<a data-mdb-ripple-init class="btn text-white btn-floating m-2 btn-twitter" href="#!" role="button">
+						<i class="fa fa-twitter"></i>
+					</a>
+
+					<!-- Youtube -->
+					<a data-mdb-ripple-init class="btn text-white btn-floating m-2 btn-youtube" href="#!" role="button">
+						<i class="fa fa-youtube"></i>
+					</a>
+
+					<!-- Instagram -->
+					<a data-mdb-ripple-init class="btn text-white btn-floating m-2 btn-instagram" href="#!" role="button">
+						<i class="fa fa-instagram"></i>
+					</a>
+				</section>
+			</div> <!-- Grid container -->
+			
+			<!-- Copyright -->
+			<div class="text-center p-3">© 2024 Copyright: No Poverty - SDG 1</div>
+		</footer> <!-- DENISE (END OF FOOTER) --> 
+    </body>
+</html>
